@@ -15,6 +15,7 @@ export const users = pgTable("users", {
   email: varchar("email").notNull().unique(),
   password: varchar("password").notNull(),
   bio: text("bio"),
+  image: varchar("image"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -40,6 +41,7 @@ export const sessions = pgTable("sessions", {
 export const posts = pgTable("posts", {
   id: serial("id").primaryKey(),
   content: text("content"),
+  image: varchar("image"),
   user_id: integer("user_id")
     .references(() => users.id)
     .notNull(),
