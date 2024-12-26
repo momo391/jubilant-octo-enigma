@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body>
-        {children}
+        <main>{children}</main>
         <Toaster />
       </body>
     </html>
